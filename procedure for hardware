@@ -1,0 +1,36 @@
+onnections:
+Hardware:
+1)connect the circuit diagram as shown in the circuit below
+2)First inorder to establish communication we should understand the the way of communication
+between the devices as shown in below figure
+3)In general for to devices to communicate the tx of device1 should be connected to rx of device2 and
+vice versa.
+4)But for dumping the code into the devices the connections should be tx->tx&rx->rx.
+5)For this purpose,initially the tx of arduino is connected tx of esp and rx-of arduino to rx of esp.
+6)This connection will allow us to dump code into esp from pc bypassing the arduino
+7)To,bypass arduino either there should be no code present in it or press the reset button of arduino
+as long as the uploading starts untill you see done uploading message on the screen.
+8)To make sure that there is no code present in arduino
+Open arduinoide->goto file->examples->basics->bareminimum->select board as
+arduinouno/genuino->upload it.
+9)selection of board can be done by
+Goto Tools->board->arduino/genuino
+
+Configuring software:
+1)first we have to install the esp8266 board in arduino ide.
+2)For this purpose,go to file->preferences and in additional boards manager column paste the
+following url and press ok.
+url:http://arduino.esp8266.com/stable/package_esp8266com_index.com
+3)Now goto tools->boards->boards manger->search for esp8266->click install.
+4)For dumping the code into esp8266 module the board should be set to generic esp8266 in arduino
+
+Coding:
+
+Communication:
+1)here I used software serial to communicate between arduino and esp.
+2)The rx of s/w serial should be connected to tx of esp and tx of s/w serial should be connected to rx
+of esp.
+3)Communication between esp and pc(serial monitor) is possible only when arduino is in Reset
+condition.so, if we use serial.print command we cannot print it on serial monitor.
+4)For this method,the only way is to transmit the message that we want print to arduino and let the
+arduino print the message on serial monitor for esp.
