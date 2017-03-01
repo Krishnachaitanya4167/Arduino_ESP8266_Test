@@ -19,6 +19,10 @@ For this code and logic to work we need to slightly alter the circuit .
 3)After the uploading is done,now remove the wires of rx,tx from 0,1 pins of arduino and connect them to 4,3 pins respectively.
 4)i.e the tx of esp is to be connected to software serial rx of arduino and vice versa. 
 
-
+file-1:code_for_ard_v2.0.ino
+   It is to be uploaded into arduino uno
+   
+ file-2: 	check_esp.ino
+   It is to be uploaded into Esp8266-wifi-module.
 
 
